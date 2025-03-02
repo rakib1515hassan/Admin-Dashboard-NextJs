@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-// import Chart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
 import ChartTab from "../common/ChartTab";
 import dynamic from "next/dynamic";
 
@@ -11,7 +9,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 
 export default function StatisticsChart() {
-  const options: ApexOptions = {
+  const options = {
     legend: {
       show: false, // Hide legend
       position: "top",
@@ -30,7 +28,6 @@ export default function StatisticsChart() {
       curve: "straight", // Define the line style (straight, smooth, or step)
       width: [2, 2], // Line width for each dataset
     },
-
     fill: {
       type: "gradient",
       gradient: {
@@ -119,6 +116,7 @@ export default function StatisticsChart() {
       data: [40, 30, 50, 40, 55, 40, 70, 100, 110, 120, 150, 140],
     },
   ];
+
   return (
     <div className="rounded-2xl border border-gray-200 bg-white px-5 pb-5 pt-5 dark:border-gray-800 dark:bg-white/[0.03] sm:px-6 sm:pt-6">
       <div className="flex flex-col gap-5 mb-6 sm:flex-row sm:justify-between">
