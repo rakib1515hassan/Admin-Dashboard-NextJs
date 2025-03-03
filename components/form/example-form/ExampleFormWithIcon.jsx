@@ -14,12 +14,13 @@ import Label from "../Label";
 import Button from "../../ui/button/Button";
 
 export default function ExampleFormWithIcon() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:");
   };
 
   const [isChecked, setIsChecked] = useState(false);
+
   return (
     <ComponentCard title="Example Form With Icons">
       <Form onSubmit={handleSubmit}>
@@ -34,7 +35,7 @@ export default function ExampleFormWithIcon() {
             <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none left-4 top-1/2 dark:text-gray-400">
               <UserIcon />
             </span>
-          </div>{" "}
+          </div>
           <div className="relative">
             <Input
               type="text"
@@ -45,7 +46,7 @@ export default function ExampleFormWithIcon() {
             <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none left-4 top-1/2 dark:text-gray-400">
               <EnvelopeIcon />
             </span>
-          </div>{" "}
+          </div>
           <div className="relative">
             <Input
               type="password"
@@ -56,7 +57,7 @@ export default function ExampleFormWithIcon() {
             <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none left-4 top-1/2 dark:text-gray-400">
               <LockIcon />
             </span>
-          </div>{" "}
+          </div>
           <div className="relative">
             <Input
               type="password"

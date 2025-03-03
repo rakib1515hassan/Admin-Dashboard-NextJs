@@ -1,11 +1,6 @@
 import React from "react";
 
-interface AvatarTextProps {
-  name: string;
-  className?: string;
-}
-
-const AvatarText: React.FC<AvatarTextProps> = ({ name, className = "" }) => {
+const AvatarText = ({ name, className = "" }) => {
   // Generate initials from name
   const initials = name
     .split(" ")
@@ -15,7 +10,7 @@ const AvatarText: React.FC<AvatarTextProps> = ({ name, className = "" }) => {
     .slice(0, 2);
 
   // Generate a consistent pastel color based on the name
-  const getColorClass = (name: string) => {
+  const getColorClass = (name) => {
     const colors = [
       "bg-brand-100 text-brand-600",
       "bg-pink-100 text-pink-600",

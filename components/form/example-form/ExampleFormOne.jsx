@@ -10,24 +10,27 @@ import Button from "../../ui/button/Button";
 import { PaperPlaneIcon } from "../../../icons";
 
 export default function ExampleFormOne() {
-  const [message, setMessage] = useState<string>("");
-  const handleSubmit = (e: React.FormEvent) => {
+  const [message, setMessage] = useState("");
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:");
   };
+
   const options = [
     { value: "marketing", label: "Option 1" },
     { value: "template", label: "Option 2" },
     { value: "development", label: "Option 3" },
   ];
-  const handleSelectChange = (value: string) => {
+
+  const handleSelectChange = (value) => {
     console.log("Selected value:", value);
   };
 
-  const handleTextareaChange = (value: string) => {
+  const handleTextareaChange = (value) => {
     setMessage(value);
     console.log("Message:", value);
   };
+
   return (
     <ComponentCard title="Example Form">
       <Form onSubmit={handleSubmit}>
@@ -65,7 +68,7 @@ export default function ExampleFormOne() {
               rows={6}
               value={message}
               onChange={handleTextareaChange}
-              className=" bg-gray-50 dark:bg-gray-800"
+              className="bg-gray-50 dark:bg-gray-800"
             />
           </div>
           <div className="col-span-2">

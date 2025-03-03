@@ -9,18 +9,19 @@ export default function InputStates() {
   const [error, setError] = useState(false);
 
   // Simulate a validation check
-  const validateEmail = (value: string) => {
+  const validateEmail = (value) => {
     const isValidEmail =
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
     setError(!isValidEmail);
     return isValidEmail;
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
     validateEmail(value);
   };
+
   return (
     <ComponentCard
       title="Input States"

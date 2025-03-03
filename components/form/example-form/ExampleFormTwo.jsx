@@ -12,14 +12,14 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/light.css";
 
 export default function ExampleFormTwo() {
-  const [selectedOption, setSelectedOption] = useState<string>("Free");
+  const [selectedOption, setSelectedOption] = useState("Free");
   const [dateOfBirth, setDateOfBirth] = useState("");
 
-  const handleDateChange = (date: Date[]) => {
+  const handleDateChange = (date) => {
     setDateOfBirth(date[0].toLocaleDateString()); // Handle selected date and format it
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:");
   };
@@ -39,14 +39,15 @@ export default function ExampleFormTwo() {
     { value: "usa", label: "United States" },
     { value: "canada", label: "Canada" },
   ];
-  const handleSelectGender = (value: string) => {
+  const handleSelectGender = (value) => {
     console.log("Selected value:", value);
   };
 
-  const handleRadioChange = (value: string) => {
+  const handleRadioChange = (value) => {
     setSelectedOption(value);
     console.log("Selected:", value);
   };
+
   return (
     <ComponentCard title="Example Form">
       <Form onSubmit={handleSubmit}>

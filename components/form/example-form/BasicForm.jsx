@@ -6,10 +6,11 @@ import Input from "../input/InputField";
 import Button from "../../ui/button/Button";
 
 export default function BasicForm() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:");
   };
+
   return (
     <ComponentCard title="Basic Form">
       <Form onSubmit={handleSubmit}>
